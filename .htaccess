@@ -1,0 +1,10 @@
+#Options +FollowSymLinks -MultiViews
+#RewriteEngine on
+
+
+#RewriteCond %{REQUEST_URI} /$
+#RewriteRule ^ %{REQUEST_URI}index.php [L,R=301]
+
+#RewriteCond %{REQUEST_URI} $
+#RewriteRule ^(.*)$ public/$1 [L,QSA]
+
