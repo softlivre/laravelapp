@@ -20,6 +20,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/henrique">Henrique</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">Blog</a>
+          </li>
         </ul>
         
       </div>
