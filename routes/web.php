@@ -28,6 +28,9 @@ Route::get('/services', [PagesController::class, 'services']);
 
 Route::get('/henrique', [PagesController::class, 'henrique']);
 
+//Route::resource('posts', 'PostsController'); //laravel7
+Route::resource('posts', App\Http\Controllers\PostsController::class);
+
 // or this alternative, without having do declare the 
 // use App\Http\Controllers\PagesController;
 /*
