@@ -28,4 +28,11 @@ class PagesController extends Controller
         
         return view('pages.services')->with($data);
     }
+
+    public function henrique()
+    {
+        $title = 'Henrique title';
+        return view('pages.henrique')->with('title', $title);
+    }
+
 }

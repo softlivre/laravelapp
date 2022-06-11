@@ -20,24 +20,19 @@ Route::get('/', function () {
 });
 */
 
-
 Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/about', [PagesController::class, 'about']);
 
 Route::get('/services', [PagesController::class, 'services']);
 
+Route::get('/henrique', [PagesController::class, 'henrique']);
 
 // or this alternative, without having do declare the 
 // use App\Http\Controllers\PagesController;
 /*
 Route::get('/', 'App\Http\Controllers\PagesController@index');
 */
-
-Route::get('/track', function () {
-    return('Bem-vindo ao sistema Zamed-Tracking!');
-});
-
 
 Route::get('/users/{id}/{name}', function ($id, $name) {
     return 'this is user id:'.$id.' and name:'.$name;
