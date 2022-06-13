@@ -9,12 +9,17 @@
     </div>
 
     <hr>
-    <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
-    <hr>
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-secondary">Edit</a>
-    <br><br>
-    {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'float-right']) !!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $post->user_id)
+            <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
+            <hr>
+            <a href="/posts/{{$post->id}}/edit" class="btn btn-secondary">Edit</a>
+            <br><br>
+            {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'float-right']) !!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+            {!! Form::close() !!}
+        @endif
+    @endif
 @endsection
 
