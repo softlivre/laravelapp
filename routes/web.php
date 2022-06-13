@@ -40,3 +40,7 @@ Route::get('/', 'App\Http\Controllers\PagesController@index');
 Route::get('/users/{id}/{name}', function ($id, $name) {
     return 'this is user id:'.$id.' and name:'.$name;
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
